@@ -10,7 +10,7 @@
         $jours = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
         foreach ($jours as $jour) { ?>
         <div class="jour"><?= $jour ?></div><?php
-            for ($heure = 0; $heure < 24; $heure++) { ?>
+            for ($heure = 8; $heure <= 17; $heure++) { ?>
                 <div class="heure"><?=$heure?></div><?php
             }
         }
