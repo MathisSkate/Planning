@@ -7,6 +7,7 @@ body{
     float: left;
     width: 75%;
     display: flex;
+    z-index: 1;
 }
 
 #action{
@@ -25,4 +26,12 @@ body{
     text-align: center;
     width: 50px;
     margin: 5px
+}
+
+.cours{
+    position: absolute;
+    background-color: orange;
+    resize: vertical;
+    z-index: 2;
+    transform: translate(-2.5px, -2.5px);
 }

@@ -25,7 +25,8 @@
         <?php
     } ?>
 </div>
-<div id="action"></div>
+<div id="action">
+</div>
 <script src="script.js"></script>
 </body>
 </html>
