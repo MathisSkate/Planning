@@ -5,11 +5,17 @@
     <title>Planning</title>
 </head>
 <body>
-<div id="planning">
+    <div id="planning">
     <?php
-
+        $jours = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
+        foreach ($jours as $jour) { ?>
+        <div class="jour"><?= $jour ?></div><?php
+            for ($heure = 0; $heure < 24; $heure++) { ?>
+                <div class="heure"><?=$heure?></div><?php
+            }
+        }
     ?>
-</div>
-<div id="action"></div>
+    </div>
+    <div id="action"></div>
 </body>
 </html>
