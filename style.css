@@ -1,0 +1,28 @@
+body{
+    box-sizing: border-box;
+}
+
+#planning{
+    text-align: center;
+    float: left;
+    width: 75%;
+    display: flex;
+}
+
+#action{
+    margin-left: 75%;
+    width: 25%;
+}
+
+.jour{
+    display: inline-block;
+}
+
+.heure{
+    background-color: limegreen;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 50px;
+    margin: 5px
+}

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css" />
     <title>Planning</title>
 </head>
 <body>
@@ -11,12 +12,11 @@
     foreach ($jours as $jour) { ?>
         <div class="jour"><?= $jour ?><?php
             for ($heure = 8; $heure <= 17; $heure++) { ?>
-                <div class="heure"><?= $heure ?></div><?php
+                <div class="heure"><?= $heure  . " H" ?></div><?php
             } ?>
         </div>
         <?php
     } ?>
-    ?>
 </div>
 <div id="action"></div>
 </body>
