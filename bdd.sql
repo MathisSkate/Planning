@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `Planning`
 --
-
+CREATE DATABASE Planning;
 -- --------------------------------------------------------
 
 --
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Cours` (
-  `cours_id` int NOT NULL,
-  `matiere_id` int DEFAULT NULL,
-  `prof_id` int DEFAULT NULL,
-  `debut` int NOT NULL,
-  `fin` int NOT NULL
+                         `cours_id` int NOT NULL,
+                         `matiere_id` int DEFAULT NULL,
+                         `prof_id` int DEFAULT NULL,
+                         `debut` int NOT NULL,
+                         `fin` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -42,8 +42,8 @@ CREATE TABLE `Cours` (
 --
 
 CREATE TABLE `Matieres` (
-  `matiere_id` int NOT NULL,
-  `matiere_libelle` varchar(30) NOT NULL
+                            `matiere_id` int NOT NULL,
+                            `matiere_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -53,8 +53,8 @@ CREATE TABLE `Matieres` (
 --
 
 CREATE TABLE `Profs` (
-  `prof_id` int NOT NULL,
-  `prof_libelle` varchar(30) NOT NULL
+                         `prof_id` int NOT NULL,
+                         `prof_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -65,21 +65,21 @@ CREATE TABLE `Profs` (
 -- Index pour la table `Cours`
 --
 ALTER TABLE `Cours`
-  ADD PRIMARY KEY (`cours_id`),
-  ADD KEY `fk_matiere_cours` (`matiere_id`),
-  ADD KEY `fk_prof_cours` (`prof_id`);
+    ADD PRIMARY KEY (`cours_id`),
+    ADD KEY `fk_matiere_cours` (`matiere_id`),
+    ADD KEY `fk_prof_cours` (`prof_id`);
 
 --
 -- Index pour la table `Matieres`
 --
 ALTER TABLE `Matieres`
-  ADD PRIMARY KEY (`matiere_id`);
+    ADD PRIMARY KEY (`matiere_id`);
 
 --
 -- Index pour la table `Profs`
 --
 ALTER TABLE `Profs`
-  ADD PRIMARY KEY (`prof_id`);
+    ADD PRIMARY KEY (`prof_id`);
 
 --
 -- Contraintes pour les tables déchargées
@@ -89,8 +89,8 @@ ALTER TABLE `Profs`
 -- Contraintes pour la table `Cours`
 --
 ALTER TABLE `Cours`
-  ADD CONSTRAINT `fk_matiere_cours` FOREIGN KEY (`matiere_id`) REFERENCES `Matieres` (`matiere_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_prof_cours` FOREIGN KEY (`prof_id`) REFERENCES `Profs` (`prof_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+    ADD CONSTRAINT `fk_matiere_cours` FOREIGN KEY (`matiere_id`) REFERENCES `Matieres` (`matiere_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    ADD CONSTRAINT `fk_prof_cours` FOREIGN KEY (`prof_id`) REFERENCES `Profs` (`prof_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
