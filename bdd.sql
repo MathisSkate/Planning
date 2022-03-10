@@ -96,3 +96,16 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (1, "Duvallet Claude");
+INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (4, "Lebigre Pierre");
+INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (3, "Duvieu Baptiste");
+INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (2, "André Mathis");
+INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (5, "Mermet Bruno");
+
+INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (1, "Bado");
+INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (2, "Html");
+INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (3, "JS");
+INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (4, "Java");
+INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (5, "Php");
