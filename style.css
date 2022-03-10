@@ -33,11 +33,12 @@ body{
 .cours{
     position: absolute !important;
     background-color: orange;
+    text-align: left !important;
     z-index: 2;
-    transform: translate(-2.5px, -2.5px);
+    /*transform: translate(-2.5px, -2.5px);*/
 }
 
 .ui-resizable-helper {
     opacity: 0.50;
-    background-color: orange;
+    background-color: red;
 }
