@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `Planning`
 --
+DROP DATABASE Planning;
 CREATE DATABASE Planning;
 -- --------------------------------------------------------
 
@@ -27,7 +28,7 @@ CREATE DATABASE Planning;
 -- Structure de la table `Cours`
 --
 
-CREATE TABLE `Cours` (
+CREATE TABLE Planning.`Cours` (
                          `cours_id` int NOT NULL,
                          `matiere_id` int DEFAULT NULL,
                          `prof_id` int DEFAULT NULL,
@@ -41,7 +42,7 @@ CREATE TABLE `Cours` (
 -- Structure de la table `Matieres`
 --
 
-CREATE TABLE `Matieres` (
+CREATE TABLE Planning.`Matieres` (
                             `matiere_id` int NOT NULL,
                             `matiere_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -52,7 +53,7 @@ CREATE TABLE `Matieres` (
 -- Structure de la table `Profs`
 --
 
-CREATE TABLE `Profs` (
+CREATE TABLE Planning.`Profs` (
                          `prof_id` int NOT NULL,
                          `prof_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -64,7 +65,7 @@ CREATE TABLE `Profs` (
 --
 -- Index pour la table `Cours`
 --
-ALTER TABLE `Cours`
+ALTER TABLE Planning.`Cours`
     ADD PRIMARY KEY (`cours_id`),
     ADD KEY `fk_matiere_cours` (`matiere_id`),
     ADD KEY `fk_prof_cours` (`prof_id`);
@@ -72,13 +73,13 @@ ALTER TABLE `Cours`
 --
 -- Index pour la table `Matieres`
 --
-ALTER TABLE `Matieres`
+ALTER TABLE Planning.`Matieres`
     ADD PRIMARY KEY (`matiere_id`);
 
 --
 -- Index pour la table `Profs`
 --
-ALTER TABLE `Profs`
+ALTER TABLE Planning.`Profs`
     ADD PRIMARY KEY (`prof_id`);
 
 --
@@ -88,9 +89,9 @@ ALTER TABLE `Profs`
 --
 -- Contraintes pour la table `Cours`
 --
-ALTER TABLE `Cours`
-    ADD CONSTRAINT `fk_matiere_cours` FOREIGN KEY (`matiere_id`) REFERENCES `Matieres` (`matiere_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-    ADD CONSTRAINT `fk_prof_cours` FOREIGN KEY (`prof_id`) REFERENCES `Profs` (`prof_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Planning.`Cours`
+    ADD CONSTRAINT `fk_matiere_cours` FOREIGN KEY (`matiere_id`) REFERENCES Planning.`Matieres` (`matiere_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    ADD CONSTRAINT `fk_prof_cours` FOREIGN KEY (`prof_id`) REFERENCES Planning.`Profs` (`prof_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -98,14 +99,14 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (1, "Duvallet Claude");
-INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (4, "Lebigre Pierre");
-INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (3, "Duvieu Baptiste");
-INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (2, "André Mathis");
-INSERT INTO `Profs`(`prof_id`, `prof_libelle`) VALUES (5, "Mermet Bruno");
+INSERT INTO Planning.`Profs`(`prof_id`, `prof_libelle`) VALUES (1, "Duvallet Claude");
+INSERT INTO Planning.`Profs`(`prof_id`, `prof_libelle`) VALUES (4, "Lebigre Pierre");
+INSERT INTO Planning.`Profs`(`prof_id`, `prof_libelle`) VALUES (3, "Duvieu Baptiste");
+INSERT INTO Planning.`Profs`(`prof_id`, `prof_libelle`) VALUES (2, "Andre Mathis");
+INSERT INTO Planning.`Profs`(`prof_id`, `prof_libelle`) VALUES (5, "Mermet Bruno");
 
-INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (1, "Bado");
-INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (2, "Html");
-INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (3, "JS");
-INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (4, "Java");
-INSERT INTO `Matieres`(`matiere_id`, `matiere_libelle`) VALUES (5, "Php");
+INSERT INTO Planning.`Matieres`(`matiere_id`, `matiere_libelle`) VALUES (1, "Bado");
+INSERT INTO Planning.`Matieres`(`matiere_id`, `matiere_libelle`) VALUES (2, "Html");
+INSERT INTO Planning.`Matieres`(`matiere_id`, `matiere_libelle`) VALUES (3, "JS");
+INSERT INTO Planning.`Matieres`(`matiere_id`, `matiere_libelle`) VALUES (4, "Java");
+INSERT INTO Planning.`Matieres`(`matiere_id`, `matiere_libelle`) VALUES (5, "Php");
