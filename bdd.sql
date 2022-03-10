@@ -29,7 +29,7 @@ CREATE DATABASE Planning;
 --
 
 CREATE TABLE Planning.`Cours` (
-                         `cours_id` int NOT NULL,
+                         `cours_id` int NOT NULL AUTO_INCREMENT,
                          `matiere_id` int DEFAULT NULL,
                          `prof_id` int DEFAULT NULL,
                          `debut` int NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE Planning.`Cours` (
 --
 
 CREATE TABLE Planning.`Matieres` (
-                            `matiere_id` int NOT NULL,
+                            `matiere_id` int NOT NULL AUTO_INCREMENT,
                             `matiere_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -54,7 +54,7 @@ CREATE TABLE Planning.`Matieres` (
 --
 
 CREATE TABLE Planning.`Profs` (
-                         `prof_id` int NOT NULL,
+                         `prof_id` int NOT NULL AUTO_INCREMENT,
                          `prof_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
