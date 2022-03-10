@@ -29,7 +29,7 @@ CREATE DATABASE Planning;
 --
 
 CREATE TABLE Planning.`Cours` (
-                         `cours_id` int NOT NULL AUTO_INCREMENT,
+                         `cours_id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
                          `matiere_id` int DEFAULT NULL,
                          `prof_id` int DEFAULT NULL,
                          `debut` int NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE Planning.`Cours` (
 --
 
 CREATE TABLE Planning.`Matieres` (
-                            `matiere_id` int NOT NULL AUTO_INCREMENT,
+                            `matiere_id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
                             `matiere_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -54,7 +54,7 @@ CREATE TABLE Planning.`Matieres` (
 --
 
 CREATE TABLE Planning.`Profs` (
-                         `prof_id` int NOT NULL AUTO_INCREMENT,
+                         `prof_id` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
                          `prof_libelle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -66,21 +66,8 @@ CREATE TABLE Planning.`Profs` (
 -- Index pour la table `Cours`
 --
 ALTER TABLE Planning.`Cours`
-    ADD PRIMARY KEY (`cours_id`),
     ADD KEY `fk_matiere_cours` (`matiere_id`),
     ADD KEY `fk_prof_cours` (`prof_id`);
-
---
--- Index pour la table `Matieres`
---
-ALTER TABLE Planning.`Matieres`
-    ADD PRIMARY KEY (`matiere_id`);
-
---
--- Index pour la table `Profs`
---
-ALTER TABLE Planning.`Profs`
-    ADD PRIMARY KEY (`prof_id`);
 
 --
 -- Contraintes pour les tables déchargées
