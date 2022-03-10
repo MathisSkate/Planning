@@ -19,29 +19,37 @@ heures.each(function() {
 		coursCourant.css("width", heureWidth);
 		spanHeure.innerText = heureCourante + " - " + (parseInt(heureCourante) + 1);
 
-		coursCourant.resizable({
-			grid: heureHeight,
-			maxWidth: heureWidth,
-			minWidth: heureWidth,
-			maxHeight: ((heureHeight * 10) - (heureTop - 31)),
-			animate: true,
-			resize : function (e, ui){
-				const originText = ui.originalElement[0].innerText.split(" ");
-				spanHeure.innerText = originText[0] + " " + originText[1] + " " + Math.round(parseInt(originText[0]) + (ui.size.height / heureHeight));
-			}
-		});
+		function addResizable(cours, heureTop){
+			cours.resizable({
+				grid: heureHeight,
+				maxWidth: heureWidth,
+				minWidth: heureWidth,
+				maxHeight: ((heureHeight * 10) - (heureTop - 31)),
+				animate: true,
+				resize : function (e, ui){
+					const originText = ui.originalElement[0].innerText.split(" ");
+					spanHeure.innerText = originText[0] + " " + originText[1] + " " + Math.round(parseInt(originText[0]) + (ui.size.height / heureHeight));
+				}
+			});
+		}
+
+		addResizable(coursCourant, heureTop);
+
 		coursCourant.draggable({
 			axis: "y",
 			scroll: true,
 			grid: [ 0, (heureHeight) ],
+			containment: "#planning",
 			stop: function (e, ui){
 				const originText = ui.helper[0].innerText.split(" ");
 				const heureDepart = Math.round(parseInt(originText[0]) + ((ui.position.top - ui.originalPosition.top) / (heureHeight + 2.5)));
 				const heureFin = Math.round(heureDepart + ((ui.helper[0].scrollHeight) / (heureHeight)));
 				spanHeure.innerText = heureDepart + " " + originText[1] + " " + heureFin;
-			}
 
+				addResizable(coursCourant, ui.helper[0].offsetTop);
+			}
 		});
 
     })
 });
+
