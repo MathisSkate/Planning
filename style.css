@@ -43,12 +43,28 @@ body{
     background-color: red;
 }
 
+#profs{
+    background-color: darkred;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    line-height: 24px;
+}
+
+#matieres{
+    background-color: darkblue;
+    width: 100%;
+    padding: 5px;
+    line-height: 24px;
+}
+
 .prof{
     text-align: center;
     padding: 5px 20px 5px 20px;
     margin: 5px;
     background-color: magenta;
     z-index: 10;
+    vertical-align: middle;
 }
 
 .matiere{
@@ -57,23 +73,32 @@ body{
     margin: 5px;
     background-color: lightblue;
     z-index: 10;
+    vertical-align: middle;
 }
 
-#profs{
-    background-color: darkred;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+.profName{
+    line-height: 24px;
 }
 
-#matieres{
-    background-color: darkblue;
-    width: 100%;
-    padding: 5px;
+.matiereName{
+    line-height: 24px;
 }
 
-.ui-draggable-dragging{
+.prof.ui-draggable-dragging, .matiere.ui-draggable-dragging{
     width: 360px;
     padding: 5px 20px 5px 20px;
     margin: 5px;
+}
+
+.champ{
+    width: 80%;
+    margin: 5px;
+}
+
+.button{
+    width: 15%
+}
+
+svg{
+    float: right;
 }

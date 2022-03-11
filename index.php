@@ -28,9 +28,13 @@
 <div id="action">
 	<div id="profs">
 		<h4>Profs</h4>
+		<div class="list"></div>
+		<input id="inputProf" class="champ" placeholder="Ajouter un professeur"/><input id="buttonProf" class="button" type="button" value="Ajout"/>
 	</div>
 	<div id="matieres">
 		<h4>Matières</h4>
+		<div class="list"></div>
+		<input id="inputMatiere" class="champ" placeholder="Ajouter une matière"/><input id="buttonMatiere" class="button" type="button" value="Ajout"/>
 	</div>
 </div>
 <script src="script.js"></script>
