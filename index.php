@@ -26,6 +26,12 @@
     } ?>
 </div>
 <div id="action">
+	<div id="profs">
+		<h4>Profs</h4>
+	</div>
+	<div id="matieres">
+		<h4>Matières</h4>
+	</div>
 </div>
 <script src="script.js"></script>
 </body>
