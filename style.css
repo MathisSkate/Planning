@@ -11,13 +11,13 @@ body{
 }
 
 #action{
-    margin-left: 1000px;
-    width: 360px;
+    margin-left: 1050px;
+    width: 400px;
 }
 
 .jour{
     display: inline-block;
-    width: 100px;
+    width: 150px;
 }
 
 .heure{
@@ -41,4 +41,39 @@ body{
 .ui-resizable-helper {
     opacity: 0.50;
     background-color: red;
+}
+
+.prof{
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
+    background-color: magenta;
+    z-index: 10;
+}
+
+.matiere{
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
+    background-color: lightblue;
+    z-index: 10;
+}
+
+#profs{
+    background-color: darkred;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#matieres{
+    background-color: darkblue;
+    width: 100%;
+    padding: 5px;
+}
+
+.ui-draggable-dragging{
+    width: 360px;
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
 }
